@@ -10,14 +10,14 @@
 // Here define views, template to load and script list to include. Maybe later I add loading CSS files.
 // Additional option in view definition is it whether view can be load more than once.
 
-var index = new ViewDefinition('/test/templates/index.html', ['/test/modules/index.js'], true);
-var _notFound = new ViewDefinition('/test/templates/notFound.html', ['/test/modules/notFound.js'], true);
+var index = new ViewDefinition('/test/templates/index.html', ['/test/modules/index.js']);
+var _notFound = new ViewDefinition('/test/templates/notFound.html', ['/test/modules/notFound.js']);
 
 // # Events #
 
-var addEvent = new ViewDefinition('/test/templates/addEvent.html', ['/test/modules/addEvent.js'], true);
-var showEvent = new ViewDefinition('/test/templates/showEvent.html', ['/test/modules/showEvent.js'], true);
-var editEvent = new ViewDefinition('/test/templates/editEvent.html', ['/test/modules/editEvent.js'], true);
+var addEvent = new ViewDefinition('/test/templates/addEvent.html', ['/test/modules/addEvent.js']);
+var showEvent = new ViewDefinition('/test/templates/showEvent.html', ['/test/modules/showEvent.js']);
+var editEvent = new ViewDefinition('/test/templates/editEvent.html', ['/test/modules/editEvent.js']);
 
 
 
@@ -33,7 +33,7 @@ patternManager.addPattern(new PatternDefinition('index', index));
 
 // # Events #
 
-patternManager.addPattern(new PatternDefinition('event/add', addEvent));
-patternManager.addPattern(new PatternDefinition('event/show/:id', showEvent));
-patternManager.addPattern(new PatternDefinition('event/show/:edit_id/edit', editEvent));
+patternManager.addPattern(new PatternDefinition('event/add', addEvent, 'view'));
+patternManager.addPattern(new PatternDefinition('event/show/:id'));
+patternManager.addPattern(new PatternDefinition('event/show/:edit_id/edit', 'popup'));
 ```

@@ -49,9 +49,8 @@ define('Axeit', [ 'when/when', 'when/node', 'when/callbacks' ], function Axeit(w
      * 
      * @param {string} templatePath
      * @param {string[]} scriptPaths
-     * @param {string=view|popup} type
      */
-    function ViewDefinition(templatePath, scriptPaths, type) {
+    function ViewDefinition(templatePath, scriptPaths) {
         /**
          * 
          * @type {string}
@@ -62,19 +61,15 @@ define('Axeit', [ 'when/when', 'when/node', 'when/callbacks' ], function Axeit(w
          * @type {string[]}
          */
         this.scriptPaths = scriptPaths;
-        /**
-         * 
-         * @type {string=view|popup}
-         */
-        this.type = type;
     }
 
     /**
      * 
      * @param {string} pattern
      * @param {ViewDefinition} viewDefinition
+     * @param {string=view|popup} type
      */
-    function PatternDefinition(pattern, viewDefinition) {
+    function PatternDefinition(pattern, viewDefinition, type) {
         /**
          * 
          * @type {string}
@@ -85,6 +80,11 @@ define('Axeit', [ 'when/when', 'when/node', 'when/callbacks' ], function Axeit(w
          * @type {ViewDefinition}
          */
         this.viewDefinition = viewDefinition;
+        /**
+         * 
+         * @type {string=view|popup}
+         */
+        this.type = type;
     }
 
     return {
