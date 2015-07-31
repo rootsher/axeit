@@ -34,6 +34,6 @@ patternManager.addPattern(new PatternDefinition('index', index));
 // # Events #
 
 patternManager.addPattern(new PatternDefinition('event/add', addEvent, 'view'));
-patternManager.addPattern(new PatternDefinition('event/show/:id'));
-patternManager.addPattern(new PatternDefinition('event/show/:edit_id/edit', 'popup'));
+patternManager.addPattern(new PatternDefinition('event/show/:id', showEvent));
+patternManager.addPattern(new PatternDefinition('event/show/:edit_id/edit', editEvent, 'popup'));
 ```
